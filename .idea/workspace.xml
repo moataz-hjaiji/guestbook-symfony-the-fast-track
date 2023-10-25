@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ef9ea9e-fed0-4c3f-afc0-186cc9195403" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/uid.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20231024130808.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20231024132553.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/CommentCrudController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/ConferenceCrudController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Test.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/TestRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/guestbook-symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/guestbook-symfony.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Conference.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Conference.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/conference/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/conference/index.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="1ef9ea9e-fed0-4c3f-afc0-186cc9195403" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,6 +199,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
