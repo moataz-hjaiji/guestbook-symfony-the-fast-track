@@ -19,6 +19,6 @@
 
 ###< symfony/phpunit-bridge ###
 
-### ide
+### IDE
 .idea
 .vscode
