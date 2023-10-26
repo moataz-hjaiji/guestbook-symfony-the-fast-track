@@ -25,14 +25,6 @@ class ConferenceController extends AbstractController
     #[Route('/', name: 'homepage')]
     public function index(ConferenceRepository $conferenceRepository): Response
     {
-//         return new Response(<<<EOF
-//           <html lang="en">
-//                <body>
-//                    <img src="/images/under-construction.gif" />
-//               </body>
-//            </html>
-//           EOF
-//        );
         return $this->render('conference/index.html.twig',[
             'conferences'=>$conferenceRepository->findAll(),
         ]);
@@ -42,8 +34,6 @@ class ConferenceController extends AbstractController
     {
         $comment = new Comment();
         $form = $this->createForm(CommentType::class,$comment);
-        $offset = max(0,$request->query->getInt('offset'));
-        $paginator = $commentRepository->getCommentPaginator($conference,$offset);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $comment->setConference($conference);
@@ -54,8 +44,11 @@ class ConferenceController extends AbstractController
             }
             $this->em->persist($comment);
             $this->em->flush();
-            //return $this->redirectToRoute('conference',["slug"=>$conference->getSlug()]);
+            return $this->redirectToRoute('conference',["slug"=>$conference->getSlug()]);
         }
+
+        $offset = max(0,$request->query->getInt('offset'));
+        $paginator = $commentRepository->getCommentPaginator($conference,$offset);
         return $this->render('conference/show.html.twig',[
             "conference"=>$conference,
             "comments"=>$paginator,
