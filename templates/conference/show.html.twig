@@ -29,4 +29,9 @@
     {% else %}
         <div>No comments have been posted yet for this conference.</div>
     {% endif %}
+    <h2>Add your own feedback</h2>
+    {{ form_start(form) }}
+    {{ form_rest(form) }}
+    {{ form_end(form) }}
+
 {% endblock %}
