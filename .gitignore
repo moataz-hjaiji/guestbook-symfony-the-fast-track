@@ -8,7 +8,8 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-
+/public/uploads
+temp_auto_push.bat
 
 ###> phpunit/phpunit ###
 /phpunit.xml
@@ -21,4 +22,5 @@
 
 ### IDE
 .idea
-.vscode
+.gitignore
+branch_structure.json
