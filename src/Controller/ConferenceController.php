@@ -6,6 +6,7 @@ use App\Entity\Comment;
 use App\Entity\Conference;
 use App\Form\CommentType;
 use App\Repository\CommentRepository;
+use App\SpamChecker;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Container\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,7 +31,13 @@ class ConferenceController extends AbstractController
         ]);
     }
     #[Route('/conference/{slug}',name:"conference")]
-    public function show(Conference $conference,CommentRepository $commentRepository,Request $request,#[Autowire("%photo_dir%")] string $photoDir):Response
+    public function show(
+        Conference $conference,
+        CommentRepository $commentRepository,
+        Request $request,
+        #[Autowire("%photo_dir%")] string $photoDir,
+        SpamChecker $spamChecker
+    ):Response
     {
         $comment = new Comment();
         $form = $this->createForm(CommentType::class,$comment);
@@ -43,6 +50,15 @@ class ConferenceController extends AbstractController
                 $comment->setPhotoFilename($filename);
             }
             $this->em->persist($comment);
+            $context = [
+              "user_ip"=>$request->getClientIp(),
+              "user_agent"=>$request->headers->get('user-agent'),
+              "referrer"=>$request->headers->get('referer'),
+              "permalink"=>$request->getUri()
+            ];
+            if($spamChecker->getSpamScore($comment,$context)===2){
+                throw new \RuntimeException('Blatant spam, go away!');
+            }
             $this->em->flush();
             return $this->redirectToRoute('conference',["slug"=>$conference->getSlug()]);
         }
